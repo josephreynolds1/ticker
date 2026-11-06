@@ -1,0 +1,21 @@
+# Build Artifacts
+ticker
+*.o
+*.a
+*.so
+
+# Runtime Cache & Temporary Files (from TMPDIR)
+/ticker_cookies.txt
+/ticker_crumb.txt
+*ticker_cookies.txt
+*ticker_crumb.txt
+
+# Local Configuration (if you prefer not to track your personal symbol config)
+config.h
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
