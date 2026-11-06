@@ -2,6 +2,8 @@
 
 A high-performance, dependency-minimal rewrite of https://github.com/pstadler/ticker.sh in C. Designed with a strict 88-character fixed-width terminal layout, ANSI semantic color-coding, and robust memory management via `libcurl`.
 
+<img width="729" height="187" alt="image" src="https://github.com/user-attachments/assets/788569dc-56c8-4286-b07d-affaaf551fb8" />
+
 ## Features
 
 * **High Performance**: Native C implementation optimized with `mold` linker and LTO support, ensuring near-instantaneous execution.
