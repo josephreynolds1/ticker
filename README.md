@@ -1,6 +1,6 @@
 # Ticker
 
-A high-performance, dependency-minimal C stock ticker built for POSIX and Alpine Linux environments. Designed with a strict 88-character fixed-width terminal layout, ANSI semantic color-coding, and robust memory management via `libcurl`.
+A high-performance, dependency-minimal rewrite of https://github.com/pstadler/ticker.sh in C. Designed with a strict 88-character fixed-width terminal layout, ANSI semantic color-coding, and robust memory management via `libcurl`.
 
 ## Features
 
