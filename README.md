@@ -1,13 +1,13 @@
 # Ticker
 
-A high-performance, dependency-minimal C stock ticker. Designed with a strict 88-character fixed-width terminal layout, ANSI semantic color-coding, and robust memory management via `libcurl`.
+A high-performance, dependency-minimal C stock ticker built for POSIX and Alpine Linux environments. Designed with a strict 88-character fixed-width terminal layout, ANSI semantic color-coding, and robust memory management via `libcurl`.
 
 ## Features
 
 * **High Performance**: Native C implementation optimized with `mold` linker and LTO support, ensuring near-instantaneous execution.
 * **Minimal Dependencies**: Relies solely on standard POSIX headers and `libcurl`. JSON parsing is handled via manual, lightweight string scanning to avoid heavy external payloads.
 * **Smart Market Detection**: Automatically parses Yahoo Finance JSON payloads to switch between Regular, Pre-Market, and After-Hours (`AH`) pricing states.
-* **Terminal Friendly**: Employs absolute escape sequences (`\033[H\033[J`) and alternate buffer rendering to eliminate flickering and prevent scrollback pollution when used with watch utilities.
+* **Terminal Friendly**: Employs absolute escape sequences (`\033[H\033[J`) to maintain clean screen updates and compatibility with watch utilities.
 * **Semantic Color Coding**: Clear red/green terminal coloring for market differences and percentage changes.
 
 ---
@@ -24,7 +24,7 @@ A high-performance, dependency-minimal C stock ticker. Designed with a strict 88
 
 Ticker symbols are configured statically via a `config.h` header file in the project root before compilation. 
 
-Create a `config.h` file with the following structure:
+Edit the `config.h` file to add stock tickers:
 
 ```c
 #ifndef CONFIG_H
@@ -45,3 +45,43 @@ static const char *symbols[] = {
 };
 
 #endif // CONFIG_H
+```
+---
+
+## Building
+
+```bash
+make
+sudo make install
+```
+
+---
+
+## Usage
+
+Run the binary directly:
+
+```bash
+./ticker
+```
+
+### Command-Line Options
+
+* `-h, --help`: Display help information and exit.
+* `-v, --version`: Display version details and exit.
+
+
+
+---
+
+## Exit Codes
+
+* `0`: Success
+* `1`: Initialization or `libcurl` global setup error
+* `2`: Network communication or API fetch failure
+
+---
+
+## License
+
+This project is open-source software. Feel free to modify and adapt it to your local workflow.
